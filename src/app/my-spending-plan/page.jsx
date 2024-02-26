@@ -13,7 +13,7 @@ import {useSession} from 'next-auth/react'
 //categories with an amount > 0 or previously checked will be checked on load. These will be retrieved for the transaction-titles-totals
 //need section - available categories not in spending plan (could be via sort)
 {/*export default function MySpendingPlan() {*/}
-const createSpendingPlan = () => {
+const CreateSpendingPlan = () => {
   const [selections,setSelections]=useState([])
   const[selectedcats,setSelectedcats]=useState([])
     const [category,setCategory]=useState("")
@@ -45,7 +45,7 @@ const createSpendingPlan = () => {
       return <p className="font-bold text-red-500">Access Denied</p>
   }
   
-  const handleCategory = async (e) => {
+  const HandleCategory = async (e) => {
     //const target = e.target;
     const target = e.currentTarget;
     
@@ -67,7 +67,7 @@ const createSpendingPlan = () => {
     //setMycategoryId(() => {e.target.id})
     //mycategories.push(e.target.id)
   }
-  const handleSelections = async (e) => {
+  const HandleSelections = async (e) => {
     e.preventDefault();
     const target = e.currentTarget;
     const catsel = target.id
@@ -150,7 +150,7 @@ console.log('set my categories',mycategories)
         type="checkbox"
         value={category._id}
         id={category._id}
-        onChange={handleCategory}
+        onChange={HandleCategory}
         />
         </label>
         </div>
@@ -195,7 +195,7 @@ console.log('set my categories',mycategories)
                 type="string"
                 />
                 <h2>{planamount}</h2>
-                <button onClick={handleSelections}>Set to plan</button>
+                <button onClick={HandleSelections}>Set to plan</button>
                 </div>
                 </>) ): "no categories are available"}
                 
@@ -211,4 +211,4 @@ console.log('set my categories',mycategories)
         
         </> )
 }
-export default createSpendingPlan
+export default CreateSpendingPlan

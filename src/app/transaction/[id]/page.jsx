@@ -70,7 +70,7 @@ if(status === 'unauthenticated'){
 const handleSubmit= async (e) => {
     e.preventDefault();
     try{
-        //const id = ctx.params.id;
+     
         const body = {
             transdate,
             descr,
@@ -109,10 +109,7 @@ const handleSubmit= async (e) => {
 const handleDeleteA= async (e) => {
     e.preventDefault();
     try{
-        const id = ctx.params.id;
-        //const body = {
-        //    transdate,descr,acctype,categoryId,amount
-        //}
+       
         const res = await fetch(`http://localhost:3000/api/transaction/${ctx.params.id}`,{
     
         headers: {
@@ -147,7 +144,6 @@ const handleDelete = async (ctx) => {
     console.log(id)
         const confirmed = confirm("Are you sure?");
         if(confirmed){
-            //ctx.params.id
             
             const res = await fetch(`http://localhost:3000/api/transaction/${ctx.params.id}`, {
                 method: "DELETE"

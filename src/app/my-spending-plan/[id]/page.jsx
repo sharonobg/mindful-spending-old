@@ -108,7 +108,7 @@ const handleSubmit= async (e) => {
 const handleDeleteA= async (e) => {
     e.preventDefault();
     try{
-        const id = ctx.params.id;
+        //const id = ctx.params.id;
         //const body = {
         //    transdate,descr,acctype,categoryId,amount
         //}
