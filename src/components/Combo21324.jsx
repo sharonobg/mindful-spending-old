@@ -8,7 +8,7 @@ const comboPlans = async (props) => {
            headers: headers(),
         });
         if(!res.ok){
-            throw new Error("Failed to fetch plan");
+            throw new Error("Combo 213 failed to fetch plan ");
         }
         //const data = await res.json();
         //console.log('data',data);
@@ -56,8 +56,7 @@ export default async function SPCategoryView(props) {
     // propscategory = `${props.category}`
     //}
 //const mycategoriesdata = getPlans();
-
-    console.log('comboPlans',comboplans)
+    //console.log('comboPlans',comboplans)
     //console.log('spending planfiltermonth',props.fmonth)
     //console.log('spending planfilteryear',props.fyear)
    //console.log('SPCategoryView transactiontotals',transactiontotals)

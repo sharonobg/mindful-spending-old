@@ -28,7 +28,7 @@ const getTransactions = async () => {
     }
 
 const {transactions} = await getTransactions();
-const newsearchParams = new URLSearchParams(props);
+//const newsearchParams = new URLSearchParams(props);
 //console.log('comp newsearchParams',newsearchParams)
 //console.log('comp transactionslistid',transactions)
 

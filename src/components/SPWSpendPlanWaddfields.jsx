@@ -8,7 +8,7 @@ const getPlans = async (props) => {
            headers: headers(),
         });
         if(!res.ok){
-            throw new Error("Failed to fetch plan");
+            throw new Error("W Added fields Failed to fetch plan");
         }
         //const data = await res.json();
         //console.log('data',data);
