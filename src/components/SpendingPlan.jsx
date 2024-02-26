@@ -3,7 +3,7 @@ import {headers} from "next/headers"
 
 const getTotals = async () => {
     try{
-        const res = await fetch("http://localhost:3000/api/transactiontitle-totals",{
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/transactiontitle-totals`,{
            cache: 'no-store',
            method: "GET",
            headers: headers(),
@@ -20,7 +20,7 @@ const getTotals = async () => {
 }
 const getGrandTotals = async (props) => {
     try{
-        const res = await fetch("http://localhost:3000/api/spending-totals-category",{
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/spending-totals-category`,{
            cache: 'no-store',
            method: "GET",
            headers: headers(),
@@ -33,23 +33,7 @@ const getGrandTotals = async (props) => {
         console.log("Error finding transactions",error)
     }
 }
-// const getCategories = async () => {
-//     try{
-//         const res = await fetch("http://localhost:3000/api/category",{
-//            cache: 'no-store',
-//            method: "GET",
-//            headers: headers(),
-//         });
-//         if(!res.ok){
-//             throw new Error("Failed to fetch categories");
-//         }
-//         //console.log('route categories',{categories})
-//         return res.json();
-//     }catch(error){
-//         console.log("Error finding categories",error)
-//     }
 
-// }
 export default async function SPCategoryView(props) {
     //const {categories} = await getCategories();
     const transactiontotals = await getTotals();
