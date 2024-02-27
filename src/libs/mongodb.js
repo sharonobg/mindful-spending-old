@@ -2,14 +2,14 @@ import mongoose from "mongoose";
 //replacing with cache
 //export const connect = async () => {
 //    try{
-//        await mongoose.connect(process.env.MONGODB_URI);
+//        await mongoose.connect(process.env.NEXT_PUBLIC_MONGODB_URI);
 //        console.log("connected to Mongo");
 //
 //    } catch (error) {
 //        console.log("no connection to Mongo",error);
 //    }
 //};
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = process.env.NEXT_PUBLIC_MONGODB_URI;
 if(!MONGODB_URI){throw new Error('Please define a MONGODB_URI')}
 let cached = global.mongoose;
 if(!cached){

@@ -51,7 +51,7 @@ export default function SimpleFilterTransaction() {
     //const filteryear = searchParams.fyear ? searchParams.fyear : "not there";
     //console.log('filtersearch',{searchParams})
         useEffect(() => {
-            fetch(`${process.env.NEXTAUTH_URL}/api/newsimplefilter`)
+            fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/newsimplefilter`)
             .then((res) => res.json())
               .then((filters) => {
                 //console.log('filters: ',filters)
@@ -61,7 +61,7 @@ export default function SimpleFilterTransaction() {
 
           useEffect(() => {
         
-            fetch(`${process.env.NEXTAUTH_URL}/api/category`)
+            fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/category`)
               .then((res) => res.json())
               .then(({categories}) => {
                 setCategories(categories)

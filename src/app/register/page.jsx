@@ -82,7 +82,7 @@ const toggleShowPass =(e) => {
 
 
         try{
-            const res = await fetch(`${process.env.NEXTAUTH_URL}/api/register`,{
+            const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/register`,{
                 headers:{
                     "Content-type":"application/json"
                 },
@@ -104,6 +104,7 @@ const toggleShowPass =(e) => {
     useEffect(() => { 
         validateForm(); 
     }, [username, email, password]);
+    
     useEffect(() => { 
         console.log(showPass) 
     }, [showPass]);

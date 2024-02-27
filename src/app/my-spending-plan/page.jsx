@@ -31,7 +31,7 @@ const CreateSpendingPlan = () => {
     const router= useRouter();
    
     useEffect(() => {
-      fetch(`${process.env.NEXTAUTH_URL}/api/category`)
+      fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/category`)
         .then((res) => res.json())
         .then(({categories}) => {
           setCategories(categories)
@@ -89,7 +89,7 @@ console.log('set my categories',mycategories)
     event.preventDefault();
     try{
         //const amount = parseFloat(amount).toFixed(2);
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/spending-plan`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/spending-plan`,{
             method:'POST',
             headers:{
                 "Content-type":"application/json",

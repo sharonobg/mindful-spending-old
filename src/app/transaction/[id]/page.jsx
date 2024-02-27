@@ -30,7 +30,7 @@ const Edit = (ctx) => {
     
 useEffect(() => {
     
-    fetch(`${process.env.NEXTAUTH_URL}/api/category`)
+    fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/category`)
       .then((res) => res.json())
       .then(({categories}) => {
         setCategories(categories)
@@ -41,7 +41,7 @@ useEffect(() => {
     
    async function fetchTransaction() {  
                          
-       const res = await fetch(`${process.env.NEXTAUTH_URL}/api/transaction/${ctx.params.id}`
+       const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/transaction/${ctx.params.id}`
        ,{cache:'no-store'}
        )
        const transaction = await res.json()
@@ -78,7 +78,7 @@ const handleSubmit= async (e) => {
             categoryId,
             amount
         }
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/transaction/${ctx.params.id}`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/transaction/${ctx.params.id}`,{
     
         headers: {
             "Content-Type": 'application/json',
@@ -110,7 +110,7 @@ const handleDeleteA= async (e) => {
     e.preventDefault();
     try{
        
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/transaction/${ctx.params.id}`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/transaction/${ctx.params.id}`,{
     
         headers: {
             "Content-Type": 'application/json',
@@ -145,7 +145,7 @@ const handleDelete = async (ctx) => {
         const confirmed = confirm("Are you sure?");
         if(confirmed){
             
-            const res = await fetch(`${process.env.NEXTAUTH_URL}/api/transaction/${ctx.params.id}`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/transaction/${ctx.params.id}`, {
                 method: "DELETE"
             });
             if(res.ok){

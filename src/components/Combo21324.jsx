@@ -2,7 +2,7 @@ import {headers} from "next/headers"
 
 const comboPlans = async (props) => {
     try{
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/combo217`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/combo217`,{
            cache: 'no-store',
            method: "GET",
            headers: headers(),
@@ -22,7 +22,7 @@ const comboPlans = async (props) => {
 }
 const getGrandTotals = async (props) => {
     try{
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/spending-totals-category`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/spending-totals-category`,{
            cache: 'no-store',
            method: "GET",
            headers: headers(),

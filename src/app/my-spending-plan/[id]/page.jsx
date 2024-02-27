@@ -30,7 +30,7 @@ const Edit = (ctx) => {
     
 useEffect(() => {
     
-    fetch(`${process.env.NEXTAUTH_URL}/api/category`)
+    fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/category`)
       .then((res) => res.json())
       .then(({categories}) => {
         setCategories(categories)
@@ -41,7 +41,7 @@ useEffect(() => {
     
    async function fetchSpendingplan() {  
                          
-       const res = await fetch(`${process.env.NEXTAUTH_URL}/api/spending-plan/${ctx.params.id}`
+       const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/spending-plan/${ctx.params.id}`
        //,{cache:'no-store'}
        )
        const spendingplan = await res.json()
@@ -77,7 +77,7 @@ const handleSubmit= async (e) => {
             categorynotes,
             planmonthyear,
         }
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/spendingplan/${ctx.params.id}`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/spendingplan/${ctx.params.id}`,{
     
         headers: {
             "Content-Type": 'application/json',
@@ -112,7 +112,7 @@ const handleDeleteA= async (e) => {
         //const body = {
         //    transdate,descr,acctype,categoryId,amount
         //}
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/spendingplan/${ctx.params.id}`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/spendingplan/${ctx.params.id}`,{
     
         headers: {
             "Content-Type": 'application/json',
@@ -148,7 +148,7 @@ const handleDelete = async (ctx) => {
         if(confirmed){
            
             
-            const res = await fetch(`${process.env.NEXTAUTH_URL}/api/spendingplan/${ctx.params.id}`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/spendingplan/${ctx.params.id}`, {
                 method: "DELETE"
             });
             if(res.ok){

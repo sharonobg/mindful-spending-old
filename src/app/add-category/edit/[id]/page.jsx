@@ -13,7 +13,7 @@ const Edit = (ctx) => {
 useEffect(() => {
     async function fetchCategory(){
         const id = ctx.params.id;
-        const res = await fetch(`process.env.NEXTAUTH_URL/api/category/${id}`);
+        const res = await fetch(`process.env.NEXT_PUBLIC_NEXTAUTH_URL/api/category/${id}`);
         const category = await res.json();
         setTitle(category.title);
     }

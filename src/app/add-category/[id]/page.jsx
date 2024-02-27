@@ -16,7 +16,7 @@ const CategoryDetails = (ctx) => {
     useEffect(() => {
        
        async function fetchCategory(){                        
-           const res = await fetch(`${process.env.NEXTAUTH_URL}/api/category/${ctx.params.id}`,{cache:'no-store'})
+           const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/category/${ctx.params.id}`,{cache:'no-store'})
            
            const category = await res.json()
            console.log('category after await: ',category)
@@ -30,7 +30,7 @@ const CategoryDetails = (ctx) => {
     try{
         const confirmModal = confirm("Do you want to delete this category?");
         if(confirmModal){
-            const res = await fetch(`${process.env.NEXTAUTH_URL}/api/category/${ctx.params.id}`,{
+            const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/category/${ctx.params.id}`,{
             headers:{
                 "Authorization": `Bearer ${session?.user?.accessToken}`
             },

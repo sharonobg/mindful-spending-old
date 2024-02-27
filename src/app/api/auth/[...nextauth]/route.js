@@ -14,8 +14,8 @@ export const authOptions =
     {
         providers:[
             GitHubProvider({
-                clientId: process.env.GITHUB_ID ?? "",
-                clientSecret: process.env.GITHUB_SECRET ?? "",
+                clientId: process.env.NEXT_PUBLIC_GITHUB_ID ?? "",
+                clientSecret: process.env.NEXT_PUBLIC_GITHUB_SECRET ?? "",
               }),
             CredentialsProvider({
                 id:'credentials',
@@ -59,7 +59,7 @@ export const authOptions =
                 }
             })
         ],
-        secret: process.env.NEXTAUTH_SECRET,
+        secret: process.env.NEXT_PUBLIC_NEXTAUTH_SECRET,
         //adapter: MongoDBAdapter(clientPromise),
         pages: {
             signIn: '/login'
