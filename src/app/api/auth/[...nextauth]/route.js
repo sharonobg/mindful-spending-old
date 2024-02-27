@@ -18,6 +18,7 @@ export const authOptions =
                 clientSecret: process.env.GITHUB_SECRET ?? "",
               }),
             CredentialsProvider({
+                id:'credentials',
                 type:'credentials',
                 credentials:{
                     username: {label: 'Email', type: 'email',placeholder:'email@example.com'},
