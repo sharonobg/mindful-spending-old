@@ -14,7 +14,7 @@ const CategoryDetails = (ctx) => {
     const router = useRouter();
 
     useEffect(() => {
-       //const id = ctx.params.id
+       
        async function fetchCategory(){                        
            const res = await fetch(`${process.env.NEXTAUTH_URL}/api/category/${ctx.params.id}`,{cache:'no-store'})
            

@@ -1,7 +1,7 @@
 import CredentialsProvider from 'next-auth/providers/credentials';
-import User from '@/models/userModel';
-import {signToken,} from '@/libs/jwt';
-import bcrypt from 'bcryptjs';
+import User from '../models/userModel';
+import {signToken,} from '../libs/jwt';
+import bcrypt from '../libs/jwt';
 
 const authOptions = {
     secret: process.env.NEXTAUTH_SECRET,

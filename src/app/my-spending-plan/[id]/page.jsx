@@ -70,7 +70,7 @@ if(status === 'unauthenticated'){
 const handleSubmit= async (e) => {
     e.preventDefault();
     try{
-        //const id = ctx.params.id;
+        
         const body = {
             mycategoryId,
             planamount,
@@ -146,7 +146,7 @@ const handleDelete = async (ctx) => {
     console.log(id)
         const confirmed = confirm("Are you sure?");
         if(confirmed){
-            //ctx.params.id
+           
             
             const res = await fetch(`${process.env.NEXTAUTH_URL}/api/spendingplan/${ctx.params.id}`, {
                 method: "DELETE"
