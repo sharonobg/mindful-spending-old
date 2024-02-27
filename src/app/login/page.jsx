@@ -32,10 +32,11 @@ const Login = () => {
 
               
             }else{
+                
                 toast.error("Error occurred again!")
             }
          }catch(error){
-
+            console.log(error)
         }
     }
     return(

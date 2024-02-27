@@ -20,7 +20,7 @@ const getTransactions = async () => {
                 throw new Error("Failed to fetch transactions");
             }
             //console.log('res in route: ',res)
-            //console.log('transadctionsListId props ln 23',props) 
+            console.log('transadctionsListId props ln 23',props) 
             return res.json();
         }catch(error){
             console.log("Error finding transactions",error)
