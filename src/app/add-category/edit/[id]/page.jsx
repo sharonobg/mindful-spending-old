@@ -36,7 +36,7 @@ const handleSubmit= async (e) => {
     try{
         const id = ctx.params.id;
         const body = {title}
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/category/${id}`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/category/${id}`,{
         headers: {
             "Content-Type": 'application/json',
             "Authorization": `Bearer ${session?.user?.accessToken}`

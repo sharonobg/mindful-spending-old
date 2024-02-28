@@ -5,13 +5,10 @@ import RemoveTransaction from "../components/RemoveTransaction";
 
   
 export default async function TransactionList(props) {
-    
- 
  
 const getTransactions = async () => {
         try{
-            
-            const res = await fetch(`${process.env.NEXTAUTH_URL}/api/transaction`,{
+            const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/transaction`,{
                 cache: 'no-store',
                 method: "GET",
                 headers: headers(),

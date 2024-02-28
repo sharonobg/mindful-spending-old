@@ -4,7 +4,7 @@ import {signToken,} from '../libs/jwt';
 import bcrypt from '../libs/jwt';
 
 const authOptions = {
-    secret: process.env.NEXT_PUBLIC_NEXTAUTH_SECRET,
+    secret: process.env.NEXTAUTH_SECRET,
     providers:[
         CredentialsProvider({
             type:'credentials',
@@ -44,7 +44,7 @@ const authOptions = {
             }
         })
     ],
-    secret: process.env.NEXT_PUBLIC_NEXTAUTH_SECRET,
+    secret: process.env.NEXTAUTH_SECRET,
     pages: {
         signIn: '/login'
     },
